@@ -56,4 +56,29 @@ class Squirtle {
     }
 }
 
-const petChooser = document.querySelector("#petChooser")
+const bulbasaur = document.getElementById("bulbasaur")
+const charmander = document.getElementById("charmander")
+const squirtle = document.getElementById("squirtle")
+const petChooser = document.getElementById("petChooser")
+    
+petChooser.addEventListener(click), () => {const clickbutton = event.target;
+    if (clickbutton.matches("#bulbasaur")){
+
+    }
+        if (clickbutton.matches)("#charmander") {
+            
+        } else {
+            
+        }
+
+
+}
+
+
+// document.getElementById("petChooser").addEventListener("click", (Bulbasaur, Charmander, Squirtle) => {
+//         if ()
+// })
+
+
+
+
