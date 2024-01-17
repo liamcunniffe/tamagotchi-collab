@@ -55,3 +55,5 @@ class Squirtle {
         this.hunger -= 5;
     }
 }
+
+const petChooser = document.querySelector("#petChooser")
