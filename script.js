@@ -29,6 +29,10 @@ class Pet {
             hunger: this.hunger,
         });
     }
+
+    // special remeber!!!!() {
+    //     this.bulbasaurSpecial += 10;
+    //     this.hunger -= 5;    
 }
 
 class Bulbasaur extends Pet {
