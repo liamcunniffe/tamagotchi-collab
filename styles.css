@@ -5,7 +5,7 @@ body {
 }
 
 
-#gamestart {
+#gameStart {
     background-color:  red;
     border-radius: 15%;
     font-size: 25%;
@@ -14,24 +14,33 @@ body {
     left: 50%;
 }
 
-
-
-
-
-#gamestart {
-    background-color:  red;
-    border-radius: 15%;
-    font-size: 25%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+#namePet {
+    display: flexbox;
+}
+#namePetInpt {
+    border: 0px;
+    padding: 1rem;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 5px;
 }
 
+#namePetBtn {
+    padding: 1rem;
+    border: 0px;
+    margin-left: 0px;
+    font-weight: bold;
+    border-radius: 5px;
+}
 
+#namePetBtn a:hover,
+button:hover {
+    background-color: #c7bc77;
+}
 
-
-
-
+.hidden {
+    display: none;
+}
 
 
 
