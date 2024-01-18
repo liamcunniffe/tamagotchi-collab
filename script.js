@@ -1,3 +1,11 @@
+function startGame() {
+    document.getElementById("gameStart").style.display = "none";
+    document.getElementById("gameContainer").style.display = "block";
+}
+
+
+
+
 class Pet {
     constructor(name) {
         this.name = name;
