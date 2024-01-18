@@ -1,4 +1,20 @@
 
+body {
+    background: 
+    linear-gradient(to left, #8f3308, #353b5e );
+}
+
+
+#gamestart {
+    background-color:  red;
+    border-radius: 15%;
+    font-size: 25%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+
 
 
 

@@ -23,7 +23,7 @@ class Pet {
     }
 }
 
-class Bulbasaur {
+class Bulbasaur extends Pet {
     constructor(name) {
         super(name)
         this.bulbasaurSpecial = 100
@@ -34,7 +34,7 @@ class Bulbasaur {
     }
 }
 
-class Charmander {
+class Charmander extends Pet {
     constructor(name) {
         super(name)
         this.charmanderSpecial = 100
@@ -45,7 +45,7 @@ class Charmander {
     }
 }
 
-class Squirtle {
+class Squirtle extends Pet {
     constructor(name) {
         super(name)
         this.squirtleSpecial = 100
@@ -55,3 +55,6 @@ class Squirtle {
         this.hunger -= 5;
     }
 }
+
+
+const petChooser = document.querySelector("#petChooser")
