@@ -2,12 +2,8 @@
 body {
     background: 
     linear-gradient(to left, #8f3308, #353b5e );
+    overflow: hidden;
 }
-
-.bulbpic{
-}
-
-
 
 #gameStart {
     width: 300px;
@@ -45,8 +41,32 @@ button:hover {
     display: none;
 }
 
+#stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
 
+#drinkStat {
+    width: 100px;
+    display: block;
+}
 
+#eatStat {
+    width: 100px;
+    display: block;
+}
+
+#specialStat {
+    width: 100px;
+    display: block;
+}
+
+#evolvebtn {
+    width: 100px;
+    display: block;
+}
 
 
 

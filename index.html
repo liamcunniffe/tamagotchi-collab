@@ -16,12 +16,12 @@
 
   <div id="gameContainer">
       <div id="petChooser">
-        <button id="bulbasaur">Choose Bulbasaur</button>
-      <!-- <button id="charmander">Choose Bulbasaur</button>
-      <button id="squirtle">Choose Bulbasaur</button> -->
+        <button id="bulbasaurBtn">Choose Bulbasaur</button>
+        <button id="charmanderBtn">Choose Charmander</button>
+        <button id="squirtleBtn">Choose Squirtle</button>
       </div>
 
-<img src="./images/bulb.png" alt="picture of bulbasaur">
+  <img id="petImage" src="./images/bulb.png" alt="picture of bulbasaur">
 
        <div id="namePet">
           <input type="text" name="name" placeholder="Name your pet!" id="namePetInpt">
@@ -31,24 +31,24 @@
   </div>
  
 
-  <div id="STATS">
+  <div id="stats">
+    <p>Health</p>
     <progress id="health" value="100" max="100"></progress>
-    <button id="drinkStat">DRINK</button>
+    <button id="healthBtn">Drink Potion</button>
 
-    <progress id="hunger" value="100" max="100"></progress>
-    <button id="eatStat">Eat</button> 
+    <p>Hunger</p>
+    <progress id="hunger" value="100" max="100">hunger</progress>
+    <button id="hungerBtn">Eat Berry</button> 
 
-    <!-- <progress id="Exp" value="100" max="100"></progress>
-    <button id="expStat">Life skills</button> -->
+    <p>Special</p>
+    <progress id="special" value="100" max="100"></progress>
+    <button id="specialBtn">Drink Special Potion</button>
+
+    <p>Exp</p>
+    <progress id="exp" value="0" max="100"></progress>
+    <button id="evolvebtn">Evolve</button>
   </div>
 
-
-
-  <link rel="" href="./script.js">  
+<script src="./script.js"></script>
 </body>
 </html>
-
-
-
-
-
