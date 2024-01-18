@@ -1,11 +1,3 @@
-function startGame() {
-    document.getElementById("gameStart").style.display = "none";
-    document.getElementById("gameContainer").style.display = "block";
-}
-
-
-
-
 class Pet {
     constructor(name) {
         this.name = name;
@@ -146,3 +138,10 @@ const petChooser = document.querySelector("#petChooser")
 //       
 //     }
 // });
+
+function startGame() {
+    document.getElementById("gameStart").style.display = "none";
+    document.getElementById("gameContainer").style.display = "block";
+}
+
+document.getElementById("gameStart").addEventListener("click", startGame());

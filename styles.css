@@ -6,14 +6,16 @@ body {
 
 
 #gameStart {
-    background-color:  red;
-    border-radius: 15%;
-    font-size: 25%;
+    border-radius: 5%;
+    border: 0px;
+    font-size: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
 }
-
+.hidden {
+    display: none;
+}
 #namePet {
     display: flexbox;
 }
