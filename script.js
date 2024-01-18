@@ -23,20 +23,6 @@ class Pet {
         this.hunger += 10;
         console.log(`${this.name}'s health is ${this.health}`)
     }
-    stats() {
-        return console.table({
-            name:this.name,
-            health: this.health,
-            hunger: this.hunger,
-        })
-    }
-    // updateStatus () {
-    //     if (this.health < 50) {
-    //         this.status = "Injured"
-    //     } else if (this.health === 0) {
-    //         this.status = "Runs away"
-    //     };
-    // }
 }
 
 class Bulbasaur extends Pet {
@@ -73,30 +59,92 @@ class Squirtle extends Pet {
 }
 
 
+let choosePet = ""
+let yourPet = ""
 
-function choosePet() {
-  const userChoice = document.getElementById('petChooser').value;
+const bulbasaurBtn = document.getElementById("bulbasaurBtn");
+bulbasaurBtn.addEventListener("click", ()=>{
+    choosePet = "bulbasaur"
+})
 
-  switch (userChoice) {
-    case 'bulbasaur':
-      currentPet = new Bulbasaur();
-      break;
-    case 'charmander':
-      currentPet = new Charmander();
-      break;
-    case 'squirtle':
-      currentPet = new Squirtle();
-      break;
-    default:
-      console.error("Invalid pet choice"); 
-      break;
-  }
-}
+const charmanderBtn = document.getElementById("charmanderBtn");
+charmanderBtn.addEventListener("click", ()=>{
+    choosePet = "charmander"
+})
+
+const squirtleBtn = document.getElementById("squirtleBtn");
+squirtleBtn.addEventListener("click", ()=>{
+    choosePet = "squirtle"
+})
+
+const namePetInpt = document.getElementById("namePetInpt");
+const namePetBtn = document.getElementById("namePetBtn");
+namePetBtn.addEventListener("click", ()=>{
+    if (namePetInpt.value === "") {
+        alert("Please enter a name!")
+        return
+    }
+
+    if (choosePet === "bulbasaur") {
+        yourPet = new Bulbasaur (namePetInpt.value)
+    }
+    else if (choosePet === "charmander") {
+        yourPet = new Charmander (namePetInpt.value)
+    }
+    else if (choosePet === "squirtle") {
+        yourPet = new Squirtle (namePetInpt.value)
+    }
+    else {
+        alert("Please choose a Pet!")
+    }
+    console.log(yourPet)
+})
+
+
+setInterval(() => {
+    yourPet.health -=5
+    yourPet.hunger -=5
+    yourPet[`${choosePet}Special`] -=5
+    yourPet.exp +=10
+    document.getElementById("health").value=yourPet.health
+    document.getElementById("hunger").value=yourPet.hunger
+    document.getElementById("special").value=yourPet[`${choosePet}Special`]
+    document.getElementById("exp").value=yourPet.exp
+}, 1000);
+
+const healthBtn = document.getElementById("healthBtn");
+const hungerBtn = document.getElementById("hungerBtn");
+const specialBtn = document.getElementById("specialBtn");
+const evolveBtn = document.getElementById("evolveBtn");
 
 
 
-const chosenName = new Squirtle ('spu----')
-console.log(chosenName)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const petChoice = (playerChoice) => {
+//     const petType = document.addEventListener ("click", () => {
+//         if (player )
+
+//     });
+//     petImage.src = `./images/dice-${petType}.svg`;
+// }
+
+
+
+// const chosenName = new Squirtle ('spu----')
+// console.log(chosenName)
 
 // playerChoice.eats()
 // console.log(chosenName)
