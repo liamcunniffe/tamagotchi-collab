@@ -23,7 +23,7 @@ class Pet {
     }
 }
 
-class Bulbasaur {
+class Bulbasaur extends Pet {
     constructor(name) {
         super(name)
         this.bulbasaurSpecial = 100
@@ -34,7 +34,7 @@ class Bulbasaur {
     }
 }
 
-class Charmander {
+class Charmander extends Pet {
     constructor(name) {
         super(name)
         this.charmanderSpecial = 100
@@ -45,7 +45,7 @@ class Charmander {
     }
 }
 
-class Squirtle {
+class Squirtle extends Pet {
     constructor(name) {
         super(name)
         this.squirtleSpecial = 100
@@ -56,29 +56,5 @@ class Squirtle {
     }
 }
 
-const bulbasaur = document.getElementById("bulbasaur")
-const charmander = document.getElementById("charmander")
-const squirtle = document.getElementById("squirtle")
-const petChooser = document.getElementById("petChooser")
-    
-petChooser.addEventListener(click), () => {const clickbutton = event.target;
-    if (clickbutton.matches("#bulbasaur")){
 
-    }
-        if (clickbutton.matches)("#charmander") {
-            
-        } else {
-            
-        }
-
-
-}
-
-
-// document.getElementById("petChooser").addEventListener("click", (Bulbasaur, Charmander, Squirtle) => {
-//         if ()
-// })
-
-
-
-
+const petChooser = document.querySelector("#petChooser")
