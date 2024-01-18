@@ -7,35 +7,41 @@
     <title>Document</title>
 </head>
 <body>
+
+ 
   <div id="gameStart" alt="Start Button" onclick="startGame()">
     <button>Start Game</button>
   </div>
 
+
   <div id="gameContainer">
-    <div id="petChooser">
-      <button id="bulbasaur">Choose Bulbasaur</button>
-      <button id="charmander">Choose Bulbasaur</button>
-      <button id="squirtle">Choose Bulbasaur</button>
-    </div>
-
-      <div id="namePet">
-        <input type="text" name="name" placeholder="Name your pet!" id="namePetInpt">
-        <button id="namePetBtn">Done</button>
+      <div id="petChooser">
+        <button id="bulbasaur">Choose Bulbasaur</button>
+      <!-- <button id="charmander">Choose Bulbasaur</button>
+      <button id="squirtle">Choose Bulbasaur</button> -->
       </div>
+
+<img src="./images/bulb.png" alt="picture of bulbasaur">
+
+       <div id="namePet">
+          <input type="text" name="name" placeholder="Name your pet!" id="namePetInpt">
+          <button id="namePetBtn">Done</button>
+      </div>
+    </div>
   </div>
-</div>
+ 
 
+  <div id="STATS">
+    <progress id="health" value="100" max="100"></progress>
+    <button id="drinkStat">DRINK</button>
 
-<div>
+    <progress id="hunger" value="100" max="100"></progress>
+    <button id="eatStat">Eat</button> 
 
-  <progress id="health" value="100" max="100"></progress>
+    <!-- <progress id="Exp" value="100" max="100"></progress>
+    <button id="expStat">Life skills</button> -->
+  </div>
 
-  <progress id="hunger" value="100" max="100"></progress>
-
-  <progress id="happiness" value="100" max="100"></progress>
-
-
-</div>
 
 
   <link rel="" href="./script.js">  
