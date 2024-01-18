@@ -12,6 +12,7 @@ class Pet {
         this.health = 100
         this.hunger = 100
         this.xp = 0
+        // this.status = "Alive"
     }
     drinks() {
         this.health += 5;
@@ -27,25 +28,25 @@ class Pet {
             name:this.name,
             health: this.health,
             hunger: this.hunger,
-        });
+        })
     }
+    // updateStatus () {
+    //     if (this.health < 50) {
+    //         this.status = "Injured"
+    //     } else if (this.health === 0) {
+    //         this.status = "Runs away"
+    //     };
+    // }
 }
 
 class Bulbasaur extends Pet {
     constructor(name) {
         super(name)
         this.bulbasaurSpecial = 100
-        this.status = "happy"
     }
     grass() {
         this.bulbasaurSpecial += 10;
         this.hunger -= 5;
-    }
-    set updateStatus (newStatus) {
-        if (this.health < 0) {
-
-        }
-
     }
 }
 
@@ -71,9 +72,34 @@ class Squirtle extends Pet {
     }
 }
 
-const playerChoice = new Squirtle ('char')
-console.log(Pet)
 
+
+function choosePet() {
+  const userChoice = document.getElementById('petChooser').value;
+
+  switch (userChoice) {
+    case 'bulbasaur':
+      currentPet = new Bulbasaur();
+      break;
+    case 'charmander':
+      currentPet = new Charmander();
+      break;
+    case 'squirtle':
+      currentPet = new Squirtle();
+      break;
+    default:
+      console.error("Invalid pet choice"); 
+      break;
+  }
+}
+
+
+
+const chosenName = new Squirtle ('spu----')
+console.log(chosenName)
+
+// playerChoice.eats()
+// console.log(chosenName)
 
 
 
