@@ -27,10 +27,17 @@ class Bulbasaur extends Pet {
     constructor(name) {
         super(name)
         this.bulbasaurSpecial = 100
+        this.status = "happy"
     }
     grass() {
         this.bulbasaurSpecial += 10;
         this.hunger -= 5;
+    }
+    set updateStatus (newStatus) {
+        if (this.health < 0) {
+
+        }
+
     }
 }
 
