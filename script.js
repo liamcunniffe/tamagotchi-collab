@@ -63,12 +63,8 @@ class Squirtle extends Pet {
     }
 }
 
-const playerChoice = new Squirtle ("Bos")
+const playerChoice = new Squirtle ('char')
 console.log(Pet)
-
-
-
-
 
 
 
