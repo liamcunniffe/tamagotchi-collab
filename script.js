@@ -3,9 +3,6 @@ function startGame() {
     document.getElementById("gameContainer").style.display = "block";
 }
 
-
-
-
 class Pet {
     constructor(name) {
         this.name = name;
@@ -15,50 +12,43 @@ class Pet {
         // this.status = "Alive"
     }
     drinks() {
-        this.health += 5;
-        return this;
+        this.health = (this.health >= 120)?100:this.health+20;
+
     }
     eats() {
-        this.health += 5;
-        this.hunger += 10;
-        console.log(`${this.name}'s health is ${this.health}`)
+        this.hunger = (this.hunger >= 120)?100:this.hunger+20;
     }
 }
-
 class Bulbasaur extends Pet {
     constructor(name) {
         super(name)
         this.bulbasaurSpecial = 100
     }
     grass() {
-        this.bulbasaurSpecial += 10;
-        this.hunger -= 5;
+        this.bulbasaurSpecial = (this.bulbasaurSpecial  >= 120)?100:this.bulbasaurSpecial +20;
     }
 }
-
 class Charmander extends Pet {
     constructor(name) {
         super(name)
         this.charmanderSpecial = 100
     }
     fire() {
-        this.charmanderSpecial += 10;
-        this.hunger -= 5;
+        this.charmanderSpecial = (this.charmanderSpecial  >= 120)?100:this.charmanderSpecial +20;
     }
 }
-
 class Squirtle extends Pet {
     constructor(name) {
         super(name)
         this.squirtleSpecial = 100
     }
     water(){
-        this.squirtleSpecial += 10;
-        this.hunger -= 5;
+        this.squirtleSpecial = (this.squirtleSpecial  >= 120)?100:this.squirtleSpecial +20;
     }
 }
 
 
+// Pet chooser
 let choosePet = ""
 let yourPet = ""
 
@@ -76,6 +66,7 @@ const squirtleBtn = document.getElementById("squirtleBtn");
 squirtleBtn.addEventListener("click", ()=>{
     choosePet = "squirtle"
 })
+
 
 const namePetInpt = document.getElementById("namePetInpt");
 const namePetBtn = document.getElementById("namePetBtn");
@@ -97,71 +88,58 @@ namePetBtn.addEventListener("click", ()=>{
     else {
         alert("Please choose a Pet!")
     }
-    console.log(yourPet)
+    document.getElementById("specialPet").textContent = `${yourPet} Special`
+    console.log(`${yourPet} Special`)
+    timer = setInterval(() => {
+        yourPet.health -=5
+        yourPet.hunger -=5
+        yourPet[`${choosePet}Special`] -=5
+        yourPet.xp +=10
+        document.getElementById("health").value=yourPet.health
+        document.getElementById("hunger").value=yourPet.hunger
+        document.getElementById("special").value=yourPet[`${choosePet}Special`]
+        document.getElementById("exp").value=yourPet.xp
+    }, 1000);
 })
 
+let timer = 0
+// Stat changes over time
 
-setInterval(() => {
-    yourPet.health -=5
-    yourPet.hunger -=5
-    yourPet[`${choosePet}Special`] -=5
-    yourPet.exp +=10
-    document.getElementById("health").value=yourPet.health
-    document.getElementById("hunger").value=yourPet.hunger
-    document.getElementById("special").value=yourPet[`${choosePet}Special`]
-    document.getElementById("exp").value=yourPet.exp
-}, 1000);
+
 
 const healthBtn = document.getElementById("healthBtn");
 const hungerBtn = document.getElementById("hungerBtn");
 const specialBtn = document.getElementById("specialBtn");
 const evolveBtn = document.getElementById("evolveBtn");
 
+healthBtn.addEventListener("click", ()=> {
+    yourPet.drinks()
+})
+
+hungerBtn.addEventListener("click", ()=> {
+    yourPet.eats()
+})
+
+specialBtn.addEventListener("click", ()=> {
+    if (choosePet === "bulbasaur") {
+        yourPet.grass()
+    }
+    if (choosePet === "charmander") {
+        yourPet.fire()
+    }
+    else if (choosePet === "squirtle") {
+        yourPet.water()
+    }
+})
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const petChoice = (playerChoice) => {
-//     const petType = document.addEventListener ("click", () => {
-//         if (player )
-
-//     });
-//     petImage.src = `./images/dice-${petType}.svg`;
-// }
-
-
-
-// const chosenName = new Squirtle ('spu----')
-// console.log(chosenName)
-
-// playerChoice.eats()
-// console.log(chosenName)
-
-
-
-
-// const petChooser = document.getElementById("petChooser");
-
-// petChooser.addEventListener("click", (event) => {
-//     const clickbutton = event.target;
-//     if (clickbutton.matches("#bulbasaur")) {
-      
-//     } else if (clickbutton.matches("#charmander")) {
-    
-//     } else if (clickbutton.matches("#squirtle")) {
+const petImage = document.getElementById("petImage");
+// evolveBtn.addEventListener("click", ()=> {
+//     if (yourPet.xp >= 100) {
+//         yourPet.xp = 0
+//         // petImage.src = `./${choosePet}/${}.png`
 //     }
-// });
+// })
 
-// console.log("petChooser")
+
+const endGame
