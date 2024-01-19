@@ -95,8 +95,9 @@ button:hover {
     width: 200px;
     height: 20px;
   }
-  
 
+
+  
  @media (max-width: 500px) {
   body {
       background: linear-gradient(to left, #8f3308, #353b5e );

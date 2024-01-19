@@ -101,6 +101,8 @@ const youLose = () => {
 
 const namePetInpt = document.getElementById("namePetInpt");
 const namePetBtn = document.getElementById("namePetBtn");
+document.getElementById("stats").style.display = "none";
+
 namePetBtn.addEventListener("click", ()=>{
     if (namePetInpt.value === "") {
         alert("Please enter a name!")
@@ -123,7 +125,9 @@ namePetBtn.addEventListener("click", ()=>{
         alert("Please choose a Pet!")
     }
     document.getElementById("specialPet").textContent = `${yourPet.species[evolveNum-1]} Special`
-    console.log(`${yourPet} Special`)
+    document.getElementById("namePet").style.display = "none";
+    document.getElementById("gameContainer").style.display = "none";
+    document.getElementById("stats").style.display = "flex";
     timer = setInterval(() => {
         yourPet.health -=5
         yourPet.hunger -=5
@@ -186,3 +190,11 @@ evolveBtn.addEventListener("click", ()=> {
         }, 1000-(evolveNum*200));
     }
 })
+
+
+
+
+
+
+
+
