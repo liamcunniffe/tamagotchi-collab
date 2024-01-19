@@ -9,12 +9,13 @@ class Pet {
         this.health = 100
         this.hunger = 100
         this.xp = 0
-        // this.status = "Alive"
     }
+
     drinks() {
         this.health = (this.health + 20 >= 100)?100:this.health+20;
 
     }
+
     eats() {
         this.hunger = (this.hunger + 20 >= 100)?100:this.hunger+20;
     }
@@ -25,6 +26,7 @@ class Bulbasaur extends Pet {
         this.bulbasaurSpecial = 100
         this.species = ["Bulbasaur", "Ivysaur", "Venusaur"]
     }
+
     grass() {
         this.bulbasaurSpecial = (this.bulbasaurSpecial >= 100)?100:this.bulbasaurSpecial +20;
     }
@@ -35,6 +37,7 @@ class Charmander extends Pet {
         this.charmanderSpecial = 100
         this.species = ["Charmander", "Charmeleon", "Charizard"]
     }
+
     fire() {
         this.charmanderSpecial = (this.charmanderSpecial >= 105)?100:this.charmanderSpecial +20;
     }
@@ -45,6 +48,7 @@ class Squirtle extends Pet {
         this.squirtleSpecial = 100
         this.species = ["Squirtle", "Wartortle", "Blastoise"]
     }
+
     water(){
         this.squirtleSpecial = (this.squirtleSpecial >= 105)?100:this.squirtleSpecial +20;
     }
@@ -128,7 +132,7 @@ namePetBtn.addEventListener("click", ()=>{
         yourPet.health -=5
         yourPet.hunger -=5
         yourPet[`${choosePet}Special`] -=5
-        yourPet.xp +=10
+        yourPet.xp +=5
         document.getElementById("health").value=yourPet.health
         document.getElementById("hunger").value=yourPet.hunger
         document.getElementById("special").value=yourPet[`${choosePet}Special`]
@@ -186,3 +190,5 @@ evolveBtn.addEventListener("click", ()=> {
         }, 1000-(evolveNum*200));
     }
 })
+
+

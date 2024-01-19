@@ -5,9 +5,9 @@ body {
   }
   
   h1 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 20px;
+    font-family: sans-serif;
+    font-size: 2rem;
+    text-align: center;
   }
   
   button {
@@ -22,6 +22,7 @@ body {
   }
   
   /* Container styles */
+  
   #gameContainer {
     width: 800px;
     margin: 0 auto; /* Center the container */
@@ -77,4 +78,30 @@ body {
     height: 20px;
   }
   
+  button {
+    padding: 20px 60px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: white;
+    color: #222222;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+
+    box-shadow: 5px 5px 0 0 black;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #222222;
+        color: white;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    &:disabled {
+        background-color: #a2a2a2;
+        color: #b6b6b6;
+        cursor: not-allowed;
+    }
+}
+
 
