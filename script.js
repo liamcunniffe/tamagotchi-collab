@@ -72,17 +72,11 @@ squirtleBtn.addEventListener("click", ()=>{
 })
 
 
-<<<<<<< HEAD
-// const youLose () => {
-    
-// }
-=======
 const youLose = () => {
     if (yourPet.health <= 0 || yourPet.health <=0 || `yourPet.${choosePet}Special` <= 0) {
         
     }
 }
->>>>>>> 55711552e1138d47082f6616266c769dd6451abe
 
 
 const namePetInpt = document.getElementById("namePetInpt");
