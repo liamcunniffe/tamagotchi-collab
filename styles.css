@@ -12,10 +12,11 @@ h1{
     font-weight: bold;
 }
 
-
-
 #namePet {
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 #namePetInpt {
     border: 0px;
@@ -48,15 +49,24 @@ button:hover {
     margin-bottom: 20px;
   }
   
-  /* Image styles */
+  #petChooser {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+  }
+
+
   #petImage {
+    display: flex;
+    align-items: center;
     width: 200px;
     height: 200px;
     margin: 0 auto;
-    border-radius: 50%; /* Make the image circular */
+    border-radius: 15%; 
   }
   
-  /* Name pet section styles */
   #namePet {
     margin-top: 20px;
   }
@@ -69,7 +79,6 @@ button:hover {
     font-size: 16px;
   }
   
-  /* Stats section styles */
   #stats {
     margin-top: 20px;
   }
@@ -85,4 +94,47 @@ button:hover {
   }
   
 
-  
+ @media (max-width: 500px) {
+  body {
+      background: green;
+  }
+
+  h1 {
+      font-size: 16px;
+  }
+
+  #namePet,
+  #stats,
+  #petChooser {
+      margin-top: 5px; 
+  }
+
+  #stats {
+      margin-bottom: 10px; 
+  }
+
+  #petImage {
+      width: 75px;
+      height: 75px; 
+  }
+
+  #namePetInpt {
+      width: 120px; 
+      padding: 5px; 
+      font-size: 12px; 
+  }
+
+  #namePetBtn {
+      padding: 0.5rem; 
+      font-size: 12px; 
+  }
+
+  #stats p {
+      font-size: 12px; 
+  }
+
+  progress {
+      width: 30px; 
+      height: 12px; 
+  }
+}
