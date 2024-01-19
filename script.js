@@ -4,8 +4,6 @@ function startGame() {
 }
 
 
-
-
 class Pet {
     constructor(name) {
         this.name = name;
