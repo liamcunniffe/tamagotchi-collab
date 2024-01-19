@@ -1,53 +1,72 @@
 body {
-    font-family: sans-serif;
-    background-color: #f0f0f0; /* Light gray background */
-    text-align: center;
-  }
-  
-  h1 {
-    font-family: sans-serif;
-    font-size: 2rem;
-    text-align: center;
-  }
-  
-  button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 5px;
-  }
-  
-  /* Container styles */
-  
-  #gameContainer {
-    width: 800px;
-    margin: 0 auto; /* Center the container */
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Pet chooser styles */
-  #petChooser {
+    background: 
+    linear-gradient(to left, #8f3308, #353b5e );
+    overflow: hidden;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: bold;
+}
+
+#namePet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+#namePetInpt {
+    border: 0px;
+    padding: 1rem;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#namePetBtn {
+    padding: 1rem;
+    border: 0px;
+    margin-left: 0px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#namePetBtn a:hover,
+button:hover {
+    background-color: #c7bc77;
+}
+
+.hidden {
+    display: none;
+}
+
+#stats {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
   }
   
-  /* Image styles */
+  #petChooser {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+  }
+
+
   #petImage {
+    display: flex;
+    align-items: center;
     width: 200px;
     height: 200px;
     margin: 0 auto;
-    border-radius: 15%;
+    border-radius: 15%; 
   }
   
-  /* Name pet section styles */
   #namePet {
     margin-top: 20px;
   }
@@ -60,7 +79,6 @@ body {
     font-size: 16px;
   }
   
-  /* Stats section styles */
   #stats {
     margin-top: 20px;
     display: flex;
@@ -78,30 +96,48 @@ body {
     height: 20px;
   }
   
-  button {
-    padding: 20px 60px;
-    border: 3px solid black;
-    border-radius: 10px;
-    background-color: white;
-    color: #222222;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 20px;
 
-    box-shadow: 5px 5px 0 0 black;
+ @media (max-width: 500px) {
+  body {
+      background: green;
+  }
 
-    &:hover {
-        cursor: pointer;
-        background-color: #222222;
-        color: white;
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
+  h1 {
+      font-size: 16px;
+  }
 
-    &:disabled {
-        background-color: #a2a2a2;
-        color: #b6b6b6;
-        cursor: not-allowed;
-    }
+  #namePet,
+  #stats,
+  #petChooser {
+      margin-top: 5px; 
+  }
+
+  #stats {
+      margin-bottom: 10px; 
+  }
+
+  #petImage {
+      width: 75px;
+      height: 75px; 
+  }
+
+  #namePetInpt {
+      width: 120px; 
+      padding: 5px; 
+      font-size: 12px; 
+  }
+
+  #namePetBtn {
+      padding: 0.5rem; 
+      font-size: 12px; 
+  }
+
+  #stats p {
+      font-size: 12px; 
+  }
+
+  progress {
+      width: 30px; 
+      height: 12px; 
+  }
 }
-
-
