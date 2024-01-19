@@ -12,11 +12,11 @@ class Pet {
         // this.status = "Alive"
     }
     drinks() {
-        this.health = (this.health >= 105)?100:this.health+20;
+        this.health = (this.health + 20 >= 100)?100:this.health+20;
 
     }
     eats() {
-        this.hunger = (this.hunger >= 105)?100:this.hunger+20;
+        this.hunger = (this.hunger + 20 >= 100)?100:this.hunger+20;
     }
 }
 class Bulbasaur extends Pet {
@@ -26,7 +26,7 @@ class Bulbasaur extends Pet {
         this.species = ["Bulbasaur", "Ivysaur", "Venusaur"]
     }
     grass() {
-        this.bulbasaurSpecial = (this.bulbasaurSpecial >= 105)?100:this.bulbasaurSpecial +20;
+        this.bulbasaurSpecial = (this.bulbasaurSpecial >= 100)?100:this.bulbasaurSpecial +20;
     }
 }
 class Charmander extends Pet {
@@ -71,13 +71,33 @@ squirtleBtn.addEventListener("click", ()=>{
     choosePet = "squirtle"
 })
 
-
 const youLose = () => {
-    if (yourPet.health <= 0 || yourPet.health <=0 || `yourPet.${choosePet}Special` <= 0) {
-        
+    if (yourPet.health <= 0 && yourPet.hunger <= 0 && yourPet[`${choosePet}Special`]) {
+        clearInterval (timer)
+        alert("Your Pokemon died, hungry and with special needs!")
+        location.reload
     }
-}
-
+    else if (yourPet.health <= 0 && yourPet.hunger) {
+        clearInterval (timer)
+        alert("Your Pokemon died, hungry!")
+        location.reload
+    }
+    else if (yourPet.health <= 0) {
+        clearInterval (timer)
+        alert("Your Pokemon died!")
+        location.reload
+    }
+    else if (yourPet.hunger <= 0) {
+        clearInterval (timer)
+        alert("Your Pokemon ate you! They are wild you know!")
+        location.reload
+    }
+    else if (yourPet[`${choosePet}Special`] <= 0) {
+        clearInterval (timer)
+        alert("Your Pokemon has devloped special needs!")
+        location.reload
+    }
+};
 
 const namePetInpt = document.getElementById("namePetInpt");
 const namePetBtn = document.getElementById("namePetBtn");
@@ -113,6 +133,7 @@ namePetBtn.addEventListener("click", ()=>{
         document.getElementById("hunger").value=yourPet.hunger
         document.getElementById("special").value=yourPet[`${choosePet}Special`]
         document.getElementById("exp").value=yourPet.xp
+        youLose()
     }, 1000);
 })
 let timer = 0
@@ -151,6 +172,17 @@ evolveBtn.addEventListener("click", ()=> {
         evolveNum ++
         petImage.src = `./images/${choosePet}/${evolveNum}.jpg`
         document.getElementById("specialPet").textContent = `${yourPet.species[evolveNum-1]} Special`
+        clearInterval (timer)
+        timer = setInterval(() => {
+            yourPet.health -=5
+            yourPet.hunger -=5
+            yourPet[`${choosePet}Special`] -=5
+            yourPet.xp +=10
+            document.getElementById("health").value=yourPet.health
+            document.getElementById("hunger").value=yourPet.hunger
+            document.getElementById("special").value=yourPet[`${choosePet}Special`]
+            document.getElementById("exp").value=yourPet.xp
+            youLose()
+        }, 1000-(evolveNum*200));
     }
 })
-
