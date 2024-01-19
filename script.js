@@ -12,11 +12,11 @@ class Pet {
         // this.status = "Alive"
     }
     drinks() {
-        this.health = (this.health >= 120)?100:this.health+20;
+        this.health = (this.health >= 105)?100:this.health+20;
 
     }
     eats() {
-        this.hunger = (this.hunger >= 120)?100:this.hunger+20;
+        this.hunger = (this.hunger >= 105)?100:this.hunger+20;
     }
 }
 class Bulbasaur extends Pet {
@@ -26,7 +26,7 @@ class Bulbasaur extends Pet {
         this.species = ["Bulbasaur", "Ivysaur", "Venusaur"]
     }
     grass() {
-        this.bulbasaurSpecial = (this.bulbasaurSpecial  >= 120)?100:this.bulbasaurSpecial +20;
+        this.bulbasaurSpecial = (this.bulbasaurSpecial >= 105)?100:this.bulbasaurSpecial +20;
     }
 }
 class Charmander extends Pet {
@@ -36,7 +36,7 @@ class Charmander extends Pet {
         this.species = ["Charmander", "Charmeleon", "Charizard"]
     }
     fire() {
-        this.charmanderSpecial = (this.charmanderSpecial  >= 120)?100:this.charmanderSpecial +20;
+        this.charmanderSpecial = (this.charmanderSpecial >= 105)?100:this.charmanderSpecial +20;
     }
 }
 class Squirtle extends Pet {
@@ -46,7 +46,7 @@ class Squirtle extends Pet {
         this.species = ["Squirtle", "Wartortle", "Blastoise"]
     }
     water(){
-        this.squirtleSpecial = (this.squirtleSpecial  >= 120)?100:this.squirtleSpecial +20;
+        this.squirtleSpecial = (this.squirtleSpecial >= 105)?100:this.squirtleSpecial +20;
     }
 }
 
@@ -72,9 +72,17 @@ squirtleBtn.addEventListener("click", ()=>{
 })
 
 
+<<<<<<< HEAD
 // const youLose () => {
     
 // }
+=======
+const youLose = () => {
+    if (yourPet.health <= 0 || yourPet.health <=0 || `yourPet.${choosePet}Special` <= 0) {
+        
+    }
+}
+>>>>>>> 55711552e1138d47082f6616266c769dd6451abe
 
 
 const namePetInpt = document.getElementById("namePetInpt");

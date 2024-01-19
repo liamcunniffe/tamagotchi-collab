@@ -1,4 +1,3 @@
-
 body {
     background: 
     linear-gradient(to left, #8f3308, #353b5e );
@@ -12,6 +11,7 @@ h1{
     color: black;
     font-weight: bold;
 }
+
 
 
 
@@ -45,31 +45,44 @@ button:hover {
 
 #stats {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} 
-
-#drinkStat {
-    width: 100px;
-    display: block;
-}
-
-#eatStat {
-    width: 100px;
-    display: block;
-}
-
-#specialStat {
-    width: 100px;
-    display: block;
-}
-
-#evolvebtn {
-    width: 100px;
-    display: block;
-}
-
-
-
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  /* Image styles */
+  #petImage {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%; /* Make the image circular */
+  }
+  
+  /* Name pet section styles */
+  #namePet {
+    margin-top: 20px;
+  }
+  
+  #namePetInpt {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Stats section styles */
+  #stats {
+    margin-top: 20px;
+  }
+  
+  #stats p {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  progress {
+    width: 200px;
+    height: 20px;
+  }
+  
 
