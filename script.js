@@ -23,6 +23,7 @@ class Bulbasaur extends Pet {
     constructor(name) {
         super(name)
         this.bulbasaurSpecial = 100
+        this.species = ["Bulbasaur", "Ivysaur", "Venusaur"]
     }
     grass() {
         this.bulbasaurSpecial = (this.bulbasaurSpecial  >= 120)?100:this.bulbasaurSpecial +20;
@@ -32,6 +33,7 @@ class Charmander extends Pet {
     constructor(name) {
         super(name)
         this.charmanderSpecial = 100
+        this.species = ["Charmander", "Charmeleon", "Charizard"]
     }
     fire() {
         this.charmanderSpecial = (this.charmanderSpecial  >= 120)?100:this.charmanderSpecial +20;
@@ -41,6 +43,7 @@ class Squirtle extends Pet {
     constructor(name) {
         super(name)
         this.squirtleSpecial = 100
+        this.species = ["Squirtle", "Wartortle", "Blastoise"]
     }
     water(){
         this.squirtleSpecial = (this.squirtleSpecial  >= 120)?100:this.squirtleSpecial +20;
@@ -51,6 +54,7 @@ class Squirtle extends Pet {
 // Pet chooser
 let choosePet = ""
 let yourPet = ""
+let evolveNum = 1
 
 const bulbasaurBtn = document.getElementById("bulbasaurBtn");
 bulbasaurBtn.addEventListener("click", ()=>{
@@ -68,6 +72,11 @@ squirtleBtn.addEventListener("click", ()=>{
 })
 
 
+const youLose () => {
+    
+}
+
+
 const namePetInpt = document.getElementById("namePetInpt");
 const namePetBtn = document.getElementById("namePetBtn");
 namePetBtn.addEventListener("click", ()=>{
@@ -78,17 +87,20 @@ namePetBtn.addEventListener("click", ()=>{
 
     if (choosePet === "bulbasaur") {
         yourPet = new Bulbasaur (namePetInpt.value)
+        petImage.src = `./images/${choosePet}/${evolveNum}.jpg`
     }
     else if (choosePet === "charmander") {
         yourPet = new Charmander (namePetInpt.value)
+        petImage.src = `./images/${choosePet}/${evolveNum}.jpg`
     }
     else if (choosePet === "squirtle") {
         yourPet = new Squirtle (namePetInpt.value)
+        petImage.src = `./images/${choosePet}/${evolveNum}.jpg`
     }
     else {
         alert("Please choose a Pet!")
     }
-    document.getElementById("specialPet").textContent = `${yourPet} Special`
+    document.getElementById("specialPet").textContent = `${yourPet.species[evolveNum-1]} Special`
     console.log(`${yourPet} Special`)
     timer = setInterval(() => {
         yourPet.health -=5
@@ -101,10 +113,7 @@ namePetBtn.addEventListener("click", ()=>{
         document.getElementById("exp").value=yourPet.xp
     }, 1000);
 })
-
 let timer = 0
-// Stat changes over time
-
 
 
 const healthBtn = document.getElementById("healthBtn");
@@ -134,12 +143,12 @@ specialBtn.addEventListener("click", ()=> {
 
 
 const petImage = document.getElementById("petImage");
-// evolveBtn.addEventListener("click", ()=> {
-//     if (yourPet.xp >= 100) {
-//         yourPet.xp = 0
-//         // petImage.src = `./${choosePet}/${}.png`
-//     }
-// })
+evolveBtn.addEventListener("click", ()=> {
+    if (yourPet.xp >= 100) {
+        yourPet.xp = 0
+        evolveNum ++
+        petImage.src = `./images/${choosePet}/${evolveNum}.jpg`
+        document.getElementById("specialPet").textContent = `${yourPet.species[evolveNum-1]} Special`
+    }
+})
 
-
-const endGame
