@@ -5,13 +5,16 @@ body {
     overflow: hidden;
 }
 
-#gameStart {
-    width: 300px;
-    height: 150px;
-    position: relative;
-    left: 50%;
-    opacity: 1;
+h1{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: bold;
 }
+
+
+
 
 #namePet {
     display: flexbox;
