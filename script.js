@@ -73,19 +73,29 @@ squirtleBtn.addEventListener("click", ()=>{
 
 const youLose = () => {
     if (yourPet.health <= 0 && yourPet.hunger <= 0 && yourPet[`${choosePet}Special`]) {
+        clearInterval (timer)
         alert("Your Pokemon died, hungry and with special needs!")
+        location.reload
     }
     else if (yourPet.health <= 0 && yourPet.hunger) {
+        clearInterval (timer)
         alert("Your Pokemon died, hungry!")
+        location.reload
     }
     else if (yourPet.health <= 0) {
+        clearInterval (timer)
         alert("Your Pokemon died!")
+        location.reload
     }
     else if (yourPet.hunger <= 0) {
+        clearInterval (timer)
         alert("Your Pokemon ate you! They are wild you know!")
+        location.reload
     }
     else if (yourPet[`${choosePet}Special`] <= 0) {
+        clearInterval (timer)
         alert("Your Pokemon has devloped special needs!")
+        location.reload
     }
 };
 
