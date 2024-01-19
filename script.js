@@ -139,6 +139,7 @@ namePetBtn.addEventListener("click", ()=>{
         document.getElementById("exp").value=yourPet.xp
         youLose()
     }, 1000);
+    
 })
 let timer = 0
 
