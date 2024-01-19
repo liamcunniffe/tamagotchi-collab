@@ -72,9 +72,9 @@ squirtleBtn.addEventListener("click", ()=>{
 })
 
 
-const youLose () => {
+// const youLose () => {
     
-}
+// }
 
 
 const namePetInpt = document.getElementById("namePetInpt");
