@@ -140,7 +140,7 @@ namePetBtn.addEventListener("click", ()=>{
         document.getElementById("health").value=yourPet.health
         document.getElementById("hunger").value=yourPet.hunger
         document.getElementById("special").value=yourPet[`${choosePet}Special`]
-        document.getElementById("exp").value=yourPet.xp
+        document.getElementById("xp").value=yourPet.xp
         youLose()
     }, 1000);
     
@@ -190,7 +190,7 @@ evolveBtn.addEventListener("click", ()=> {
             document.getElementById("health").value=yourPet.health
             document.getElementById("hunger").value=yourPet.hunger
             document.getElementById("special").value=yourPet[`${choosePet}Special`]
-            document.getElementById("exp").value=yourPet.xp
+            document.getElementById("xp").value=yourPet.xp
             youLose()
         }, 1000-(evolveNum*200));
     }
